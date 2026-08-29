@@ -7,6 +7,15 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -33,7 +42,12 @@ export default function Navbar() {
       >
         {/* Left cluster */}
         <div className="flex items-center gap-6 xl:gap-[28px]">
-          <a href="#top" aria-label="Om Dhuri — home" className="group shrink-0 select-none">
+          <a
+            href="#top"
+            onClick={(e) => scrollToSection(e, "top")}
+            aria-label="Om Dhuri — home"
+            className="group shrink-0 select-none"
+          >
             <Logo className="h-[26px] w-[70px] text-ink transition-transform duration-300 group-hover:-translate-y-0.5 lg:h-[30px] lg:w-[80px]" />
           </a>
 
@@ -53,6 +67,7 @@ export default function Navbar() {
             <li key={l}>
               <a
                 href={`#${l.toLowerCase()}`}
+                onClick={(e) => scrollToSection(e, l.toLowerCase())}
                 className="group relative text-[11px] font-semibold tracking-[0.13em] text-ink/80 uppercase transition-colors hover:text-ink"
               >
                 {l}
@@ -66,6 +81,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
             className="group hidden items-center gap-3 rounded-full bg-ink py-[10px] pr-[12px] pl-[20px] text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:shadow-[0_14px_38px_rgba(0,0,0,0.28)] sm:inline-flex"
           >
             <span className="text-[10px] font-semibold tracking-[0.14em]">LET'S CONNECT</span>
@@ -97,7 +113,7 @@ export default function Navbar() {
             <li key={l} style={{ transitionDelay: `${i * 40}ms` }}>
               <a
                 href={`#${l.toLowerCase()}`}
-                onClick={() => setOpen(false)}
+                onClick={(e) => scrollToSection(e, l.toLowerCase())}
                 className="block border-b border-black/5 py-3 text-[11px] font-semibold tracking-[0.18em] text-ink uppercase"
               >
                 {l}
@@ -107,7 +123,7 @@ export default function Navbar() {
           <li className="pt-5">
             <a
               href="#contact"
-              onClick={() => setOpen(false)}
+              onClick={(e) => scrollToSection(e, "contact")}
               className="inline-flex items-center gap-3 rounded-full bg-ink px-5 py-3 text-[10px] font-semibold tracking-[0.14em] text-white"
             >
               LET'S CONNECT <ArrowUpRight className="h-4 w-4" />

@@ -4,32 +4,12 @@ import { ArrowUpRight } from "./Icons";
 const PROJECTS = [
   {
     num: "01",
-    title: "Nova Commerce",
-    tags: ["Next.js", "Stripe", "Tailwind"],
-    desc: "A headless storefront with sub-second page loads and a checkout that converts.",
-    visual: "bg-ink",
+    title: "[ Your Project Title ]",
+    tags: ["React", "TypeScript", "Tailwind"],
+    desc: "A brief, punchy description of your project and what problem it solves.",
+    visual: "bg-ink", // Use 'bg-ink' for dark cards, 'bg-white' for light cards
   },
-  {
-    num: "02",
-    title: "Pulse Dashboard",
-    tags: ["React", "TypeScript", "Charts"],
-    desc: "Real-time analytics dashboard with fluid data visualisations and dark mode.",
-    visual: "bg-white",
-  },
-  {
-    num: "03",
-    title: "Atlas CMS",
-    tags: ["Node.js", "Postgres", "Prisma"],
-    desc: "A content platform built for editors — structured, quick and painless.",
-    visual: "bg-white",
-  },
-  {
-    num: "04",
-    title: "Orbit Landing",
-    tags: ["GSAP", "Three.js", "Vite"],
-    desc: "An award-style marketing site with scroll-driven 3D and buttery motion.",
-    visual: "bg-ink",
-  },
+  // Add more projects here following the same format
 ];
 
 function ProjectVisual({ variant, num }: { variant: string; num: string }) {
