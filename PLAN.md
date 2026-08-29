@@ -17,7 +17,6 @@ Build a **non-traditional creative developer portfolio** for Om Dhuri — a 3rd-
 - No generic 3-column card grid for projects
 - No dark/light toggle
 - No fake stats
-- No animation libraries (CSS keyframes only)
 
 ---
 

@@ -119,7 +119,7 @@ index.html              ✅ Meta tags, font import, favicon
 ## Key Conventions & Rules
 
 ### DO ✅
-- Use `reveal` + `data-delay` for all scroll-animated elements
+- Use `framer-motion` for complex scroll reveals, layout transitions, and buttery smooth interactions
 - Use `text-neutral-500` for muted/secondary copy
 - Use `text-ink` for primary text
 - Use `text-accent` for brand orange highlights
@@ -128,10 +128,9 @@ index.html              ✅ Meta tags, font import, favicon
 - All icons live in `Icons.tsx` — add new icons there, never install icon libraries
 
 ### DON'T ❌
-- Don't install Framer Motion, GSAP, or other animation libraries (CSS/keyframes only)
+- Don't use GSAP (stick to Framer Motion for React ecosystem compatibility)
 - Don't use Tailwind v3 config (`tailwind.config.js`) — this project uses v4
 - Don't add dark mode — the theme is fixed light (`#f2f2f2` canvas)
-- Don't add `transition: transform` on elements that also have CSS `animation` on `transform` — this suppresses keyframe animations (known bug we hit)
 - Don't add placeholder external links — use real URLs or `href="#"` temporarily
 - Don't use `font-display` or `font-label` — not configured. Use standard Tailwind font utilities
 

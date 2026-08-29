@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex w-full flex-col overflow-hidden bg-canvas pb-10 lg:min-h-[calc(100svh-102px)] lg:pb-0"
+      className="relative isolate flex w-full flex-col overflow-hidden bg-canvas lg:min-h-[calc(100svh-80px)] lg:pb-0"
     >
       {/* ------------ ambient background ------------ */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -54,7 +54,7 @@ export default function Hero() {
       {/* ------------ middle row: copy + focus list ------------ */}
       <div className="mx-auto w-full max-w-[1512px] max-lg:contents lg:flex lg:flex-1 lg:items-center lg:justify-between lg:gap-10 lg:px-12">
         {/* ---- left copy ---- */}
-        <div className="relative z-20 px-5 pt-10 max-lg:order-1 sm:px-8 lg:w-[360px] lg:shrink-0 lg:px-0 lg:pt-0 xl:w-[420px]">
+        <div className="relative z-20 px-5 max-lg:order-1 sm:px-8 lg:w-[360px] lg:shrink-0 lg:px-0 xl:w-[420px]">
           <p
             className="reveal text-[12px] font-medium tracking-[0.3em] text-neutral-500 uppercase"
             data-delay="60"
@@ -133,43 +133,49 @@ export default function Hero() {
       </div>
 
       {/* ------------ portrait ------------ */}
-      <div className="relative z-10 mx-auto mt-12 w-full max-w-[420px] px-6 max-lg:order-2 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
-        {/* soft disc */}
-        <div
-          aria-hidden
-          className="soft-ring absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 rounded-full lg:h-[112%] lg:w-auto"
-        />
-        <div
-          aria-hidden
-          className="absolute top-1/2 left-1/2 aspect-square h-auto w-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 shadow-[inset_0_10px_40px_rgba(255,255,255,0.9)] lg:h-[98%] lg:w-auto"
-        />
-        <div
-          aria-hidden
-          className="dot-grid absolute top-1/2 left-1/2 aspect-square h-auto w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 lg:h-[84%] lg:w-auto"
-        />
+      <div className="relative z-10 mx-auto mt-6 w-full max-w-[420px] px-6 max-lg:order-2 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
+        
+        {/* Aspect wrapper ensures circles share exact geometric center relative to the image bounds */}
+        <div className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] -translate-x-1/2 -translate-y-1/2 aspect-square lg:h-full lg:w-auto pointer-events-none select-none">
+          {/* soft disc */}
+          <div
+            aria-hidden
+            className="soft-ring absolute top-1/2 left-1/2 h-[118%] w-[118%] -translate-x-1/2 -translate-y-1/2 rounded-full lg:h-[112%] lg:w-[112%]"
+          />
+          <div
+            aria-hidden
+            className="absolute top-1/2 left-1/2 h-[100%] w-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 shadow-[inset_0_10px_40px_rgba(255,255,255,0.9)] lg:h-[98%] lg:w-[98%]"
+          />
+          <div
+            aria-hidden
+            className="dot-grid absolute top-1/2 left-1/2 h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 lg:h-[84%] lg:w-[84%]"
+          />
 
-        {/* Orbiting spheres — track matches soft-ring disc, sphere sits on rim */}
-        <div
-          aria-hidden
-          className="orbit-track orbit-track-1 absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-auto"
-        >
-          <div className="orbit-sphere orbit-sphere-1">
-            <div className="orb orb-counter-1 h-full w-full rounded-full" />
+          {/* Orbiting spheres */}
+          <div
+            aria-hidden
+            className="orbit-track orbit-track-1 absolute top-1/2 left-1/2 h-[118%] w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-[112%]"
+          >
+            <div className="orbit-sphere orbit-sphere-1">
+              <div className="orb orb-counter-1 h-full w-full rounded-full" />
+            </div>
+          </div>
+          <div
+            aria-hidden
+            className="orbit-track orbit-track-2 absolute top-1/2 left-1/2 h-[118%] w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-[112%]"
+          >
+            <div className="orbit-sphere orbit-sphere-2">
+              <div className="orb orb-counter-2 h-full w-full rounded-full" />
+            </div>
           </div>
         </div>
-        <div
-          aria-hidden
-          className="orbit-track orbit-track-2 absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-auto"
-        >
-          <div className="orbit-sphere orbit-sphere-2">
-            <div className="orb orb-counter-2 h-full w-full rounded-full" />
-          </div>
-        </div>
+
+
 
         <img
           src={portrait}
           alt="Om Dhuri, creative developer, wearing a black hoodie"
-          className="portrait-fade reveal relative z-10 mx-auto h-full w-full object-contain object-bottom lg:w-auto"
+          className="portrait-fade reveal relative z-10 mx-auto h-full w-full object-contain object-bottom pointer-events-none select-none lg:w-auto"
           data-delay="80"
           width={900}
           height={1100}
