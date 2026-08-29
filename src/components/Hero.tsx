@@ -137,21 +137,21 @@ export default function Hero() {
         {/* soft disc */}
         <div
           aria-hidden
-          className="soft-ring absolute top-[-4%] left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 rounded-full lg:h-[112%] lg:w-auto"
+          className="soft-ring absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 rounded-full lg:h-[112%] lg:w-auto"
         />
         <div
           aria-hidden
-          className="absolute top-[2%] left-1/2 aspect-square h-auto w-[100%] -translate-x-1/2 rounded-full bg-white/80 shadow-[inset_0_10px_40px_rgba(255,255,255,0.9)] lg:h-[98%] lg:w-auto"
+          className="absolute top-1/2 left-1/2 aspect-square h-auto w-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 shadow-[inset_0_10px_40px_rgba(255,255,255,0.9)] lg:h-[98%] lg:w-auto"
         />
         <div
           aria-hidden
-          className="dot-grid absolute top-[6%] left-1/2 aspect-square h-auto w-[86%] -translate-x-1/2 rounded-full opacity-70 lg:h-[84%] lg:w-auto"
+          className="dot-grid absolute top-1/2 left-1/2 aspect-square h-auto w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 lg:h-[84%] lg:w-auto"
         />
 
         {/* Orbiting spheres — track matches soft-ring disc, sphere sits on rim */}
         <div
           aria-hidden
-          className="orbit-track orbit-track-1 absolute top-[-4%] left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 lg:h-[112%] lg:w-auto"
+          className="orbit-track orbit-track-1 absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-auto"
         >
           <div className="orbit-sphere orbit-sphere-1">
             <div className="orb orb-counter-1 h-full w-full rounded-full" />
@@ -159,7 +159,7 @@ export default function Hero() {
         </div>
         <div
           aria-hidden
-          className="orbit-track orbit-track-2 absolute top-[-4%] left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 lg:h-[112%] lg:w-auto"
+          className="orbit-track orbit-track-2 absolute top-1/2 left-1/2 aspect-square h-auto w-[118%] -translate-x-1/2 -translate-y-1/2 lg:h-[112%] lg:w-auto"
         >
           <div className="orbit-sphere orbit-sphere-2">
             <div className="orb orb-counter-2 h-full w-full rounded-full" />
