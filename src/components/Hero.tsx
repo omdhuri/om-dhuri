@@ -8,6 +8,7 @@ import {
   PaletteIcon,
   SparkleIcon,
   XIcon,
+  DownloadIcon,
 } from "./Icons";
 
 const portrait = "/images/portrait2.png";
@@ -40,6 +41,15 @@ const SOCIALS = [
 ];
 
 export default function Hero() {
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="top"
@@ -54,16 +64,16 @@ export default function Hero() {
       {/* ------------ middle row: copy + focus list ------------ */}
       <div className="mx-auto w-full max-w-[1512px] max-lg:contents lg:flex lg:flex-1 lg:items-center lg:justify-between lg:gap-10 lg:px-12">
         {/* ---- left copy ---- */}
-        <div className="relative z-20 px-5 max-lg:order-1 sm:px-8 lg:w-[360px] lg:shrink-0 lg:px-0 xl:w-[420px]">
+        <div className="relative z-20 px-5 max-lg:order-3 max-lg:mt-6 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:text-center sm:px-8 lg:w-[360px] lg:shrink-0 lg:px-0 xl:w-[420px]">
           <p
-            className="reveal text-[12px] font-medium tracking-[0.3em] text-neutral-500 uppercase"
+            className="reveal hidden text-[12px] font-medium tracking-[0.3em] text-neutral-500 uppercase lg:block"
             data-delay="60"
           >
             I Build
           </p>
 
           <h1
-            className="reveal mt-4 text-[clamp(2.75rem,9vw,4.7rem)] leading-[0.95] font-extrabold tracking-[-0.035em] text-ink"
+            className="reveal mt-4 hidden text-[clamp(2.75rem,9vw,4.7rem)] leading-[0.95] font-extrabold tracking-[-0.035em] text-ink lg:block"
             data-delay="120"
           >
             Digital
@@ -72,25 +82,44 @@ export default function Hero() {
           </h1>
 
           <p
-            className="reveal mt-6 max-w-[300px] text-[12.5px] leading-[1.9] font-medium tracking-[0.14em] text-neutral-500 uppercase"
+            className="reveal mt-6 hidden max-w-[300px] text-[12.5px] leading-[1.9] font-medium tracking-[0.14em] text-neutral-500 uppercase lg:block"
             data-delay="200"
           >
             That are fast, accessible
             <br className="hidden sm:block" /> and built to scale.
           </p>
 
-          <a
-            href="#projects"
-            className="reveal group mt-9 inline-flex items-center gap-5 rounded-full bg-white/70 py-[11px] pr-10 pl-[11px] shadow-[0_16px_40px_-18px_rgba(0,0,0,0.35)] ring-1 ring-black/[0.04] backdrop-blur transition-all duration-400 hover:bg-white hover:shadow-[0_22px_50px_-18px_rgba(0,0,0,0.45)] lg:mt-11"
-            data-delay="280"
+          {/* Mobile-only bio text based on inspiration */}
+          <p
+            className="reveal max-w-[340px] text-[13.5px] font-medium leading-[1.7] text-neutral-500 lg:hidden"
+            data-delay="200"
           >
-            <span className="grid h-[50px] w-[50px] place-items-center rounded-full bg-white shadow-[0_6px_18px_rgba(0,0,0,0.12)] transition-transform duration-400 group-hover:rotate-45">
-              <ArrowUpRight className="h-[19px] w-[19px] text-ink" />
-            </span>
-            <span className="text-[12.5px] font-semibold tracking-[0.18em] text-ink uppercase">
-              View my work
-            </span>
-          </a>
+            I build modern, fast and scalable digital experiences with <span className="font-bold text-ink">clean code</span> and <span className="font-bold text-ink">thoughtful design</span>.
+          </p>
+
+          <div className="reveal mt-8 flex w-full max-w-[340px] flex-row items-center justify-center gap-2 sm:w-auto lg:mt-11" data-delay="280">
+            <a
+              href="#projects"
+              onClick={(e) => scrollTo(e, "projects")}
+              className="group flex h-[48px] flex-1 items-center justify-center gap-2 rounded-full bg-ink px-3 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1 sm:h-13 sm:w-auto sm:px-6"
+            >
+              <span className="whitespace-nowrap text-[9px] font-semibold tracking-[0.15em] text-white uppercase sm:text-[11px]">
+                View my work
+              </span>
+              <ArrowUpRight className="h-[14px] w-[14px] shrink-0 text-white/70 transition-transform duration-300 group-hover:rotate-45 group-hover:text-white" />
+            </a>
+
+            <a
+              href="/resume.pdf"
+              download="Om_Dhuri_Resume.pdf"
+              className="group flex h-[48px] flex-1 items-center justify-center gap-2 rounded-full bg-white px-3 shadow-[0_4px_14px_rgba(0,0,0,0.05)] ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_14px_44px_-20px_rgba(0,0,0,0.15)] sm:h-13 sm:w-auto sm:px-6"
+            >
+              <span className="whitespace-nowrap text-[9px] font-semibold tracking-[0.15em] text-ink uppercase sm:text-[11px]">
+                Download Resume
+              </span>
+              <DownloadIcon className="h-[14px] w-[14px] shrink-0 text-ink/70 transition-transform duration-300 group-hover:translate-y-0.5 group-hover:text-ink" />
+            </a>
+          </div>
         </div>
 
         {/* ---- right: focused on ---- */}
@@ -133,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* ------------ portrait ------------ */}
-      <div className="relative z-10 mx-auto mt-6 w-full max-w-[420px] px-6 max-lg:order-2 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
+      <div className="relative z-10 mx-auto mt-14 w-full max-w-[420px] px-6 max-lg:order-1 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
         
         {/* Aspect wrapper ensures circles share exact geometric center relative to the image bounds */}
         <div className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] -translate-x-1/2 -translate-y-1/2 aspect-square lg:h-full lg:w-auto pointer-events-none select-none">
@@ -185,7 +214,7 @@ export default function Hero() {
       </div>
 
       {/* ------------ name block ------------ */}
-      <div className="relative z-20 flex w-full flex-col items-center px-4 max-lg:order-3 lg:px-6 lg:pb-9">
+      <div className="relative z-20 flex w-full flex-col items-center px-4 max-lg:order-2 lg:px-6 lg:pb-0">
         {/* creative developer pill */}
         <span className="reveal glass-pill inline-flex items-center gap-4 rounded-full border border-white/70 px-8 py-[15px] shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] lg:px-[38px] lg:py-[17px]">
           <AsteriskIcon className="h-4 w-4 text-accent" />
@@ -210,10 +239,12 @@ export default function Hero() {
         >
           Code. Design. Solve. Repeat.
         </p>
+      </div>
 
-        {/* social bar */}
+      {/* ------------ social bar ------------ */}
+      <div className="relative z-20 flex w-full flex-col items-center px-4 max-lg:order-5 max-lg:mt-14 lg:order-last lg:pb-9">
         <div
-          className="reveal glass-pill mt-7 flex w-full max-w-[690px] items-center justify-between gap-2 rounded-[38px] border border-white/70 p-2.5 shadow-[0_20px_50px_-26px_rgba(0,0,0,0.5)] sm:rounded-full sm:pl-4 lg:mt-8"
+          className="reveal glass-pill flex w-full max-w-[690px] items-center justify-between gap-2 rounded-[38px] border border-white/70 p-2.5 shadow-[0_20px_50px_-26px_rgba(0,0,0,0.5)] sm:rounded-full sm:pl-4"
           data-delay="210"
         >
           <ul className="flex flex-1 items-center justify-around gap-1 sm:gap-2">
@@ -237,6 +268,7 @@ export default function Hero() {
 
           <a
             href="#contact"
+            onClick={(e) => scrollTo(e, "contact")}
             aria-label="Get in touch"
             className="group grid h-[46px] w-[46px] shrink-0 place-items-center rounded-full bg-white shadow-[0_8px_20px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 hover:bg-ink hover:text-white sm:h-[52px] sm:w-[52px]"
           >

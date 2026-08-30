@@ -1,5 +1,5 @@
 import SectionHeader from "./SectionHeader";
-import { ArrowUp, ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon, XIcon } from "./Icons";
+import { ArrowUp, ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon, XIcon, DownloadIcon } from "./Icons";
 
 const SOCIAL_CIRCLES = [
   { icon: GithubIcon, label: "GitHub", href: "https://github.com/omdhuri" },
@@ -8,6 +8,15 @@ const SOCIAL_CIRCLES = [
 ];
 
 export default function Contact() {
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="contact" className="relative overflow-hidden pb-10 pt-24 lg:pt-32">
       <div
@@ -27,18 +36,32 @@ export default function Contact() {
               Have a project in mind, or just want to say hi? My inbox is always open — I usually reply within a day.
             </p>
           </div>
-          <div className="reveal" data-delay="240">
+          <div className="reveal mt-11 flex flex-wrap justify-center gap-6" data-delay="240">
             <a
               href="mailto:omdhuri.dev@gmail.com"
-              className="group mt-11 inline-flex items-center gap-4 rounded-full bg-white py-3 pl-4 pr-9 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
+              className="group inline-flex items-center gap-4 rounded-full bg-white py-3 pl-4 pr-9 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-white">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white">
                 <MailIcon className="h-4.5 w-4.5" />
               </span>
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-ink">
                 omdhuri.dev@gmail.com
               </span>
-              <ArrowUpRight className="h-4.5 w-4.5 text-neutral-500 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+              <ArrowUpRight className="h-4.5 w-4.5 shrink-0 text-neutral-500 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+            </a>
+
+            <a
+              href="/resume.pdf"
+              download="Om_Dhuri_Resume.pdf"
+              className="group inline-flex items-center gap-4 rounded-full bg-ink py-3 pl-4 pr-9 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-ink">
+                <DownloadIcon className="h-4.5 w-4.5" />
+              </span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white">
+                Download Resume
+              </span>
+              <DownloadIcon className="h-4.5 w-4.5 shrink-0 text-white/50 transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-accent" />
             </a>
           </div>
           <div className="reveal mt-10 flex items-center gap-4" data-delay="320">
@@ -66,6 +89,7 @@ export default function Contact() {
           </p>
           <a
             href="#top"
+            onClick={(e) => scrollTo(e, "top")}
             aria-label="Back to top"
             className="group flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:bg-ink"
           >

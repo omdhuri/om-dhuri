@@ -4,12 +4,44 @@ import { ArrowUpRight } from "./Icons";
 const PROJECTS = [
   {
     num: "01",
-    title: "[ Your Project Title ]",
-    tags: ["React", "TypeScript", "Tailwind"],
-    desc: "A brief, punchy description of your project and what problem it solves.",
+    title: "CharismaAI",
+    tags: ["Python", "FastAPI", "Gemini API", "JavaScript"],
+    desc: "An AI interview coaching platform with multimodal video analysis.",
     visual: "bg-ink", // Use 'bg-ink' for dark cards, 'bg-white' for light cards
+    link: "https://github.com/omdhuri",
   },
-  // Add more projects here following the same format
+  {
+    num: "02",
+    title: "SkillSync",
+    tags: ["React", "Vite", "Tailwind CSS"],
+    desc: "A career guidance web application with roadmap tracking and resume builder features.",
+    visual: "bg-white",
+    link: "https://skill-sync-ten-ecru.vercel.app",
+  },
+  {
+    num: "03",
+    title: "Regional Food E-Commerce",
+    tags: ["React", "JavaScript", "WhatsApp API"],
+    desc: "A responsive product catalog website featuring WhatsApp Business API integration for orders.",
+    visual: "bg-ink",
+    link: "https://sahyadri-international.vercel.app",
+  },
+  {
+    num: "04",
+    title: "Smart Café System",
+    tags: ["Python", "Flask", "SQLite", "React"],
+    desc: "A QR-code based ordering system for real-time tracking and order management.",
+    visual: "bg-white",
+    link: "https://github.com/omdhuri",
+  },
+  {
+    num: "05",
+    title: "TripGenie",
+    tags: ["React", "FastAPI", "Python", "SQLite"],
+    desc: "A smart travel planner generating personalized itineraries based on preferences, mood, and budget constraints.",
+    visual: "bg-ink",
+    link: "https://github.com/omdhuri",
+  }
 ];
 
 function ProjectVisual({ variant, num }: { variant: string; num: string }) {
@@ -71,7 +103,9 @@ export default function Projects() {
           {PROJECTS.map((p, i) => (
             <div key={p.num} className="reveal" data-delay={i * 100}>
               <a
-                href="#contact"
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block rounded-[32px] bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:-translate-y-2"
               >
                 <ProjectVisual variant={p.visual} num={p.num} />

@@ -145,7 +145,9 @@ The orbiting background spheres work via a CSS pivot technique:
 
 ## What Is Pending
 
-- [ ] Replace dummy projects in `Projects.tsx` with real project data from Om
-- [ ] Add a Resume PDF to `public/` and link it in the Contact section
+- [ ] Replace dummy projects in `Projects.tsx` with real project data from Om (Need separate Live/GitHub URLs)
+- [x] Add a Resume PDF to `public/` and link it in the Contact section
+- [ ] Place the download resume button perfectly (current position in Contact section is not ideal)
 - [ ] Polish pass: verify mobile responsiveness on all new sections
-- [ ] SEO: update meta description and og:image in `index.html`
+- [ ] Update Marquee data (currently dummy)
+- [x] SEO: update meta description and og:image in `index.html`
