@@ -162,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* ------------ portrait ------------ */}
-      <div className="relative z-10 mx-auto mt-28 w-full max-w-[420px] px-6 max-lg:order-1 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
+      <div className="relative z-10 mx-auto mt-20 w-full max-w-[420px] px-6 max-lg:order-1 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
         
         {/* Aspect wrapper ensures circles share exact geometric center relative to the image bounds */}
         <div className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] -translate-x-1/2 -translate-y-1/2 aspect-square lg:h-full lg:w-auto pointer-events-none select-none">
@@ -258,7 +258,7 @@ export default function Hero() {
                   className="group flex items-center justify-center gap-2.5 rounded-full px-2 py-2.5 transition-colors sm:gap-3.5 sm:px-4"
                 >
                   <Icon className="h-[19px] w-[19px] shrink-0 text-ink transition-transform duration-300 group-hover:-translate-y-0.5 sm:h-[21px] sm:w-[21px]" />
-                  <span className="text-[10px] font-semibold tracking-[0.12em] text-ink/85 uppercase transition-colors group-hover:text-ink sm:text-[12.5px]">
+                  <span className="hidden text-[10px] font-semibold tracking-[0.12em] text-ink/85 uppercase transition-colors group-hover:text-ink sm:block sm:text-[12.5px]">
                     {label}
                   </span>
                 </a>
