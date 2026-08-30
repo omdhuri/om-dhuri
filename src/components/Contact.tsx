@@ -39,29 +39,23 @@ export default function Contact() {
           <div className="reveal mt-11 flex flex-wrap justify-center gap-6" data-delay="240">
             <a
               href="mailto:omdhuri.dev@gmail.com"
-              className="group inline-flex items-center gap-4 rounded-full bg-white py-3 pl-4 pr-9 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
+              className="group inline-flex items-center gap-2 rounded-full bg-white py-2.5 pl-3 pr-5 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] ring-1 ring-black/5 transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] sm:gap-4 sm:py-3 sm:pl-4 sm:pr-9"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white">
-                <MailIcon className="h-4.5 w-4.5" />
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-ink transition-transform duration-400 group-hover:scale-105 sm:h-12 sm:w-12">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  className="h-4 w-4 text-white sm:h-5 sm:w-5"
+                >
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </span>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-ink">
+              <span className="text-[9.5px] font-semibold uppercase tracking-[0.1em] text-ink sm:text-[11px] sm:tracking-[0.26em]">
                 omdhuri.dev@gmail.com
               </span>
-              <ArrowUpRight className="h-4.5 w-4.5 shrink-0 text-neutral-500 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
-            </a>
-
-            <a
-              href="/resume.pdf"
-              download="Om_Dhuri_Resume.pdf"
-              className="group inline-flex items-center gap-4 rounded-full bg-ink py-3 pl-4 pr-9 shadow-[0_14px_44px_-20px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
-            >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-ink">
-                <DownloadIcon className="h-4.5 w-4.5" />
-              </span>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white">
-                Download Resume
-              </span>
-              <DownloadIcon className="h-4.5 w-4.5 shrink-0 text-white/50 transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-accent" />
+              <ArrowUpRight className="h-4 w-4 text-neutral-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" />
             </a>
           </div>
           <div className="reveal mt-10 flex items-center gap-4" data-delay="320">
