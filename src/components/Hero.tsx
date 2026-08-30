@@ -162,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* ------------ portrait ------------ */}
-      <div className="relative z-10 mx-auto mt-14 w-full max-w-[420px] px-6 max-lg:order-1 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
+      <div className="relative z-10 mx-auto mt-28 w-full max-w-[420px] px-6 max-lg:order-1 lg:absolute lg:bottom-[23%] lg:left-1/2 lg:mt-0 lg:h-[70%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:px-0">
         
         {/* Aspect wrapper ensures circles share exact geometric center relative to the image bounds */}
         <div className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] -translate-x-1/2 -translate-y-1/2 aspect-square lg:h-full lg:w-auto pointer-events-none select-none">
