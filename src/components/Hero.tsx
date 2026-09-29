@@ -28,7 +28,7 @@ const FOCUS = [
   },
   {
     n: "03",
-    title: "Side Projects",
+    title: "Freelance",
     copy: ["Experimenting, learning,", "and building in public."],
     Icon: SparkleIcon,
   },
